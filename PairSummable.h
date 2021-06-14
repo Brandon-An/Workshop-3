@@ -36,7 +36,6 @@ namespace sdds
 
         PairSummable &operator+=(const PairSummable &item)
         {
-            V temp = item.value();
             Pair<V, K>::valType += item.value();
           
             return *this;
@@ -61,9 +60,9 @@ namespace sdds
     public:
         PairSummable(){};
 
-        PairSummable(const std::string &key, const std::string &value = " ") : Pair<std::string, std::string>(key, value)
+        PairSummable(const std::string &key, const std::string &value = "") : Pair<std::string, std::string>(key, value)
         {
-            if (value == " ")
+            if (value == "")
             {
                 blankKey = true;
             }

@@ -1,0 +1,21 @@
+//Name: Brandon An Email: ban4@myseneca.ca Student Number: 152900197 Date: June 13, 2021
+
+I was unaware how to initialize the static members of a class until I reviewed one of the lectures which clarified that one has to initialize it outside the class and to refer to to it within members using Class<template type> syntax.
+
+I found that instead of specializing just the += operator, it was necesarry to specialize the other class methods and constructors to be compliant with the general template. The plus sign can handle numeric addition and concatenation of strings, but cannot handle a const string of ", " and therefor the function must be specialized.
+
+Explain in the reflection what = initial in the prototype means (1 parameter constrictor)
+	The "= initial" value allows that object to be constructed with one argument instead of two. 
+
+why we don't need to specialize the initial value for the summation (see that the value is different when we add numbers versus when we add strings).
+	Definitions in headers are appropriate when the parameters of our member functions include the class template variables. 
+
+the reason for specializing the operator+=() member function.
+	The generic template function handles numeric values whereas the specialized function handles strings.
+
+why we don't need to specialize the initial value for the summation (see that the value is different when we add numbers versus when we add strings).
+	One argument constructor from main passes in key value while the other value is left blank.
+
+the reason for defining the class variable outside the class definition.
+	Static members are required to be defined outside so their values can be known at compile time.
+
