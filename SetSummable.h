@@ -1,3 +1,4 @@
+//Name: Brandon An Email: ban4@myseneca.ca Student Number: 152900197 Date: June 13, 2021
 #ifndef SETSUMMABLE_H_
 #define SETSUMMABLE_H_
 
