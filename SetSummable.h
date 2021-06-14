@@ -8,13 +8,22 @@ namespace sdds
     template <unsigned N, class T>
     class SetSummable : public Set<N, T>
     {
-        T arr[N];
-
     public:
+        SetSummable()
+        {
+            mw = 0;
+        }
         T accumulate(const std::string &filter) const
         { 
-            T local(filter);
-            elem
+            T localPairSum(filter);
+            for (unsigned i = 0; i < N; i++)
+            {
+                if (this->get(i).isCompatibleWith(localPairSum))
+                {
+                    localPairSum += Set<N, T>::arr[i];
+                }
+            }
+            return localPairSum;
         };
     };
 }

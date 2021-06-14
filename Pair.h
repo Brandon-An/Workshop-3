@@ -1,11 +1,14 @@
 #ifndef PAIR_H_
 #define PAIR_H_
+#include <iomanip>
 
 namespace sdds
 {
+    
     template <typename V, typename K>
     class Pair
     {
+    protected:
         V valType;
         K keyType;
 
@@ -20,7 +23,7 @@ namespace sdds
         const K &key() const {return keyType;};
         virtual void display(std::ostream &os) const 
         {
-            os << keyType << " : " << valType << std::endl;
+            os << std::setw(mw) << keyType << " : " << valType << std::endl;
         };
     };
 

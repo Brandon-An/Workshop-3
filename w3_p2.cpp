@@ -72,51 +72,51 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 	}
 
-	// // Process the second file
-	// // The values in this file will be interpreted as numbers
-	// //     Sumation means mathematical addition of numbers.
-	// {
-	// 	sdds::SetSummable<25, sdds::PairSummable<int, std::string>> ticketSales;
+	// Process the second file
+	// The values in this file will be interpreted as numbers
+	//     Sumation means mathematical addition of numbers.
+	{
+		sdds::SetSummable<25, sdds::PairSummable<int, std::string>> ticketSales;
 
-	// 	// get the data from the file
-	// 	{
-	// 		std::ifstream input(argv[2]);
-	// 		if (!input)
-	// 		{
-	// 			std::cerr << "ERROR: Cannot open file [" << argv[2] << "].\n";
-	// 			return 4;
-	// 		}
-	// 		do
-	// 		{
-	// 			char ticketType[64];
-	// 			int number;
-	// 			input >> ticketType >> number;
-	// 			if (input)
-	// 			{
-	// 				sdds::PairSummable<int, std::string> record(ticketType, number);
-	// 				ticketSales += record;
-	// 			}
-	// 		} while (input);
-	// 		input.close();
-	// 	}
+		// get the data from the file
+		{
+			std::ifstream input(argv[2]);
+			if (!input)
+			{
+				std::cerr << "ERROR: Cannot open file [" << argv[2] << "].\n";
+				return 4;
+			}
+			do
+			{
+				char ticketType[64];
+				int number;
+				input >> ticketType >> number;
+				if (input)
+				{
+					sdds::PairSummable<int, std::string> record(ticketType, number);
+					ticketSales += record;
+				}
+			} while (input);
+			input.close();
+		}
 
-	// 	std::cout << "Detail Ticket Sales\n"
-	// 	          << "--------------------------\n";
-	// 	for (size_t i = 0; i < ticketSales.size(); ++i)
-	// 		std::cout << ticketSales.get(i);
-	// 	std::cout << std::endl;
+		std::cout << "Detail Ticket Sales\n"
+		          << "--------------------------\n";
+		for (size_t i = 0; i < ticketSales.size(); ++i)
+			std::cout << ticketSales.get(i);
+		std::cout << std::endl;
 
-	// 	double studentFare = 2.06;
-	// 	double adultFare = 3.33;
-	// 	double seniorFare = 2.5;
+		double studentFare = 2.06;
+		double adultFare = 3.33;
+		double seniorFare = 2.5;
 
-	// 	std::cout << "Summary of Ticket Sales\n"
-	// 	          << "--------------------------\n";
-	// 	std::cout << std::fixed << std::setprecision(2) << std::right;
-	// 	std::cout << "Student Tickets  = " << std::setw(7) << ticketSales.accumulate("Student").value() * studentFare << std::endl;
-	// 	std::cout << "  Adult Tickets  = " << std::setw(7) << ticketSales.accumulate("Adult").value() * adultFare << std::endl;
-	// 	std::cout << " Senior Tickets  = " << std::setw(7) << ticketSales.accumulate("Senior").value() * seniorFare << std::endl;
-	// }
+		std::cout << "Summary of Ticket Sales\n"
+		          << "--------------------------\n";
+		std::cout << std::fixed << std::setprecision(2) << std::right;
+		std::cout << "Student Tickets  = " << std::setw(7) << ticketSales.accumulate("Student").value() * studentFare << std::endl;
+		std::cout << "  Adult Tickets  = " << std::setw(7) << ticketSales.accumulate("Adult").value() * adultFare << std::endl;
+		std::cout << " Senior Tickets  = " << std::setw(7) << ticketSales.accumulate("Senior").value() * seniorFare << std::endl;
+	}
 
 	// done
 	return 0;
